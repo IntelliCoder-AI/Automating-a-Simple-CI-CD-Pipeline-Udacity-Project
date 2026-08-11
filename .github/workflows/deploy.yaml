@@ -38,7 +38,7 @@ jobs:
         run: npm run lint:all
 
       - name: Run URL Checker
-        run: node script/url-checker.js -t ${{ vars.URL_CHECKER_TIMEOUT }} -d src/posts
+        run: node script/url-checker.js -t ${{ vars.URL_CHECKER_TIMEOUT || '5' }} -d src/posts
 
   build:
     needs: test
